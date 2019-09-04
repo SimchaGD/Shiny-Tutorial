@@ -3,7 +3,7 @@ library(shiny)
 
 shinyUI(
     fluidPage(
-        titlePanel(h3("Iris dataset", align = "center")),
+        titlePanel(h4("Plot iris dataset variables", align = "center")),
         sidebarLayout(
             
             sidebarPanel(
@@ -17,14 +17,7 @@ shinyUI(
             ),
             
             mainPanel(
-                tabsetPanel(type = "tabs",
-                            tabPanel("Summary", verbatimTextOutput("summary")),
-                            tabPanel("Structure", verbatimTextOutput("struct")),
-                            tabPanel("Data", tableOutput("IrisData")),
-                            tabPanel("Plot", 
-                                     plotOutput("IrisHist")
-                                     )
-                            )
+                plotOutput("IrisHist")
             )
         )
     )

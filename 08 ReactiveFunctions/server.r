@@ -3,27 +3,18 @@ library(stringi)
 
 shinyServer(
     function(input, output){
-        #determine five number summary
-        output$summary <- renderPrint(summary(iris))
         
-        # determine strucure of dataset
-        output$struct <- renderPrint({
-            str(iris)
+        # make reactive function to reuse this variable
+        colm <- reactive({
+            as.numeric(input$var)
         })
         
-        # determine datatable visualisation
-        output$IrisData <- renderTable({
-            colm <- as.numeric(input$var)
-            iris[colm]
-            
-        }, bordered = TRUE, rownames = TRUE)
-        
-        # determine histogram
+        # determine output
         output$IrisHist <- renderPlot({
-            colm <- as.numeric(input$var)
-            data = iris[, colm]
+            data = iris[, colm()]
+            
             hist(data, breaks = seq(0, max(data), l = input$bins + 1), col = input$colour,
-                 main = "Histogram of Iris dataset", xlab = names(iris[colm]))
+                 main = "Histogram of Iris dataset", xlab = names(iris[colm()]))
         })
     } 
 )
