@@ -4,13 +4,14 @@ library(shiny)
 shinyUI(
     fluidPage(
         
-        titlePanel(title = "This is my first shiny app. Hello Shiny!"),
-        sidebarLayout( position = "right",
+        titlePanel(title = "Zet hier de titel neer"),
+        sidebarLayout( position = "left",
             
-            sidebarPanel(h3("This is side bar panel"), 
-                         h4("widget4"), 
-                         p("heeeeeeeeeeeel veel tekst. NOGGGGGGGGGGGGGGMEEER TEKST")),
-            mainPanel(h1("This is the main panel text. Output is displayed here"))
+            sidebarPanel(h3("Dit is een soort menu"), 
+                         h4("Hier komen widgets"),
+                         h5("Widget 1"),
+                         h5("Widget 2")),
+            mainPanel(h1("Hier komt alle output te staan"))
             
         )
     )

@@ -7,9 +7,7 @@ shinyServer(
         output$summary <- renderPrint(summary(iris))
         
         # determine strucure of dataset
-        output$struct <- renderPrint({
-            str(iris)
-        })
+        output$struct <- renderPrint(str(iris))
         
         # determine datatable visualisation
         output$IrisData <- renderTable({

@@ -7,7 +7,7 @@ shinyUI(
         sidebarLayout(
             
             sidebarPanel(
-                selectInput("city", "What city is the best?", cities, selectize = TRUE)
+                selectInput("city", "What city is the best?", cities)
             ),
             
             mainPanel(

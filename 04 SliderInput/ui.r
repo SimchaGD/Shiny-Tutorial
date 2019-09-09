@@ -25,7 +25,7 @@ shinyUI(
                          sliderInput("anime", "Cool animation", 
                                      min = -1, max = 5, value = -1, animate = TRUE),
                          # Select decimal
-                         sliderInput("dec", "Cool animation",
+                         sliderInput("dec", "Decimal",
                                     min = 0, max = 0.95, value = 0, step = 0.05)
                          ),
             

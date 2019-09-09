@@ -1,3 +1,4 @@
+
 library(shiny)
 
 
@@ -17,14 +18,13 @@ shinyUI(
             ),
             
             mainPanel(
-                tabsetPanel(type = "tabs",
-                            tabPanel("Summary", verbatimTextOutput("summary")),
-                            tabPanel("Structure", verbatimTextOutput("struct")),
-                            tabPanel("Data", tableOutput("IrisData")),
-                            tabPanel("Plot", 
-                                     plotOutput("IrisHist")
-                                     )
-                            )
+                tabsetPanel(
+                    type = "tabs",
+                    tabPanel("Summary", verbatimTextOutput("summary")),
+                    tabPanel("Structure", verbatimTextOutput("struct")),
+                    tabPanel("Data", tableOutput("IrisData")),
+                    tabPanel("Plot", plotOutput("IrisHist"))
+                )
             )
         )
     )
