@@ -35,6 +35,7 @@ shinyServer(
                 # iris.pdf
                 paste("iris", tolower(input$format), sep = ".")
             },
+            # Specify Content
             content = function(file) {
                 # Decide which device to open
                 if (input$format == "PNG"){
