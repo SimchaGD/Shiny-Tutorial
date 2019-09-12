@@ -1,7 +1,6 @@
 
 library(shiny)
 
-
 shinyUI(
     fluidPage(
         titlePanel(h3("Iris dataset", align = "center")),
