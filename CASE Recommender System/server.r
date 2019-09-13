@@ -16,6 +16,16 @@ shinyServer(
             }
         })
         
+        output$dataLoaded <- reactive({
+            if (is.null(input$file)){
+                return(FALSE)
+            } else{
+                return(TRUE)
+            }
+        })
+        outputOptions(output, "dataLoaded", suspendWhenHidden = FALSE)
+        output$dataCheck <- renderText(dataLoaded())
+        
         data <- reactive({
             file1 <- input$file
             if (is.null(file1)){return()}
@@ -59,12 +69,13 @@ shinyServer(
             }
             else{
                 tabsetPanel(
-                    tabPanel("Data preview", 
-                             tableOutput("table")),
-                    tabPanel("Summary", 
-                             verbatimTextOutput("summary")),
                     tabPanel("meta", 
-                             tableOutput("filedf"))
+                             tableOutput("filedf"), value = 1),
+                    tabPanel("Data preview", 
+                             tableOutput("table"), value = 2),
+                    tabPanel("Summary", 
+                             verbatimTextOutput("summary"), value = 3),
+                    id = "selectedtablad"
                 )
             }
             
