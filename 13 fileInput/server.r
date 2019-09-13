@@ -39,7 +39,7 @@ shinyServer(
                     tabPanel("meta", 
                              tableOutput("filedf"))
                 )
-                }
+            }
             
         })
     }   
