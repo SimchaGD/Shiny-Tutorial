@@ -16,8 +16,10 @@ shinyUI(
                 
                 # Alleen wanneer een bestand ingeladen is willen we een keuze maken 
                 # of welk bestand we willen
-                conditionalPanel("output.dataLoaded == true",
-                    uiOutput("selectfile")),
+                conditionalPanel(
+                    "output.dataLoaded == true",
+                    uiOutput("selectfile")
+                ), 
                 
                 # Alleen wanneer we de data voor ons hebben kunnen we beslissen hoe deze ingelezen
                 # moet worden, daarom is het alleen mogelijk om op tablad 2 die opties te kiezen
